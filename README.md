@@ -1,28 +1,39 @@
-# 🧰 IT-05 Python Survival Kit (Sachsen)
+# 📘 IT-Systemelektroniker: Python Survival Kit (IT-05)
 
-Dieses Cheat Sheet deckt die Grundlagen für das Lernfeld **IT-05 (Software zur Verwaltung von Daten anpassen)** ab. Es ist optimiert für den Einstieg (1. & 2. Lehrjahr) und fokussiert sich auf Logik, Syntax und Fehlervermeidung.
+**Version:** 1.0  
+**Fokus:** Lernfeld 5 (Grundlagen der Programmierung)  
+**Status:** 1. & 2. Lehrjahr (Ohne Arrays)
 
----
-
-## ⚠️ Die Goldenen Syntax-Regeln
-
-1.  **Einrückung ist Gesetz:** Python nutzt keine geschweiften Klammern `{}`. Alles, was zu einer Schleife oder Funktion gehört, muss eingerückt sein (Tab oder 4 Leerzeichen).
-2.  **Der Doppelpunkt:** Nach `if`, `else`, `elif`, `for`, `while` und `def` muss **immer** ein Doppelpunkt (`:`) stehen.
-3.  **Groß-/Kleinschreibung:** `True` ist nicht das Gleiche wie `true`. Python unterscheidet genau!
+Dieses Dokument dient als Nachschlagewerk (Cheat Sheet) für die absoluten Grundlagen der prozeduralen Programmierung mit Python.
 
 ---
 
-## 📦 1. Variablen & Datentypen
+## ⚡ 1. Die Goldenen Regeln (Syntax)
 
-| Typ | Fachbegriff | Syntax-Beispiel | Wichtiges |
-| :--- | :--- | :--- | :--- |
-| **Text** | `String` (str) | `name = "Max"` | Immer in `" "` oder `' '` setzen. |
-| **Ganzzahl** | `Integer` (int) | `alter = 18` | Keine Anführungszeichen. |
-| **Kommazahl** | `Float` | `preis = 9.99` | **Punkt** statt Komma nutzen! |
-| **Logisch** | `Boolean` | `status = True` | Großschreibung beachten (`True`/`False`). |
+Python ist sehr strikt, was die Form angeht. Wenn du diese drei Regeln brichst, läuft nichts.
 
-### Typ-Umwandlung (Casting)
+1.  **Einrückung ist Pflicht:** Python nutzt keine Klammern `{}` für Code-Blöcke. Alles, was zu einer Bedingung oder Schleife gehört, muss **eingerückt** sein (Taste `Tab` oder 4 Leertasten).
+2.  **Der Doppelpunkt:** Am Ende von Zeilen mit `if`, `else`, `elif`, `while`, `for`, `def` steht immer ein Doppelpunkt `:`.
+3.  **Groß-/Kleinschreibung:** `print` ist nicht `Print`. `True` ist nicht `true`.
+
+---
+
+## 📦 2. Variablen & Datentypen
+
+Variablen sind Speicherplätze ("Kartons"). In Python musst du den Typ nicht extra ansagen, Python erkennt ihn automatisch.
+
+| Datentyp | Kürzel | Beschreibung | Beispiel-Code | Wichtiger Hinweis |
+| :--- | :--- | :--- | :--- | :--- |
+| **String** | `str` | Textzeichenkette | `name = "Admin"` | Muss in `" "` oder `' '` stehen. |
+| **Integer** | `int` | Ganze Zahl | `spannung = 230` | Keine Anführungszeichen! |
+| **Float** | `float` | Gleitkommazahl | `strom = 0.5` | **Punkt** statt Komma nutzen! |
+| **Boolean** | `bool` | Wahrheitswert | `ist_aktiv = True` | Nur `True` oder `False`. |
+
+### 🛠 Typ-Umwandlung (Casting)
+Oft hast du den falschen Typ (z.B. Text aus einer Eingabe), brauchst aber eine Zahl zum Rechnen.
+
 ```python
-x = int("5")    # Macht aus Text "5" die Zahl 5 (zum Rechnen)
-y = str(5)      # Macht aus Zahl 5 den Text "5" (zum Anzeigen)
-z = float("3.5") # Umwandlung in Kommazahl
+x = "10"          # Das ist Text (String)
+y = int(x)        # Umwandlung in Ganzzahl (Rechnen möglich)
+z = float("5.5")  # Umwandlung in Kommazahl
+s = str(100)      # Umwandlung von Zahl zurück in Text
